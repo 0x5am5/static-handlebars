@@ -107,22 +107,14 @@ module.exports = function(grunt) {
 						}
 					]
 				},
-
 				stats: {
-					// Configure the console output
 					colors: true,
 					reasons: true
 				},
-					// stats: false disables the stats output
-
-					progress: false, // Don't show progress
-					// Defaults to true
-
-					failOnError: false // don't report error to grunt if webpack find errors
-					// Use this if webpack errors are tolerable and grunt should continue
+				progress: false,
+				failOnError: false
 				},
 				build: {
-					// webpack options
 					entry: "./app/assets/js/main.js",
 					output: {
 						path: "./dist/assets/",
@@ -146,13 +138,13 @@ module.exports = function(grunt) {
 
 	});
 
-	grunt.loadNpmTasks('grunt-contrib-connect');
-	grunt.loadNpmTasks('grunt-contrib-sass');
-	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-assemble');
+	grunt.loadNpmTasks('grunt-contrib-sass');
 	grunt.loadNpmTasks('grunt-postcss');
 	grunt.loadNpmTasks('grunt-webpack');
+	grunt.loadNpmTasks('grunt-contrib-connect');
 	grunt.loadNpmTasks('grunt-contrib-yuidoc');
+	grunt.loadNpmTasks('grunt-contrib-watch');
 
 
 	// Default task(s).
