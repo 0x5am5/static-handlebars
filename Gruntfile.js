@@ -1,6 +1,8 @@
 module.exports = function(grunt) {
 	grunt.initConfig({
+		
 		pkg: grunt.file.readJSON('package.json'),
+		
 		watch: {
 			options: {
 				livereload: true
@@ -22,7 +24,7 @@ module.exports = function(grunt) {
 		sass: {
 			dev: {
 				options: {
-          			style: 'expanded'
+        	style: 'expanded'
 				},
 				files: [{
 					expand: true,
@@ -47,11 +49,15 @@ module.exports = function(grunt) {
 		},
 
 		connect: {
-			port: 8001,
-          	base: './dist',
-          	livereload: true,
-          	open: true
-		},
+      server: {
+        options: {
+          port: 9001,
+          base: 'dist',
+          livereload: true,
+          open: true
+        }
+      }
+    },
 
 		assemble: {
 			options: {
@@ -150,8 +156,8 @@ module.exports = function(grunt) {
 
 
 	// Default task(s).
-  	grunt.registerTask('default', ['sass:dev', 'assemble', 'webpack', 'connect', 'watch']);
-  	// Build task
-  	grunt.registerTask('build', ['sass:dist', 'postcss', 'assemble', 'webpack']);
+	grunt.registerTask('default', ['sass:dev', 'assemble', 'webpack', 'connect', 'watch']);
+	// Build task
+	grunt.registerTask('build', ['sass:dist', 'postcss', 'assemble', 'webpack']);
 
 };
