@@ -1,0 +1,1 @@
+import ToggleClass from './components/toggle';
